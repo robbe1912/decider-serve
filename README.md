@@ -97,7 +97,7 @@ curl -s http://127.0.0.1:8000/decide -H "Content-Type: application/json" -d '{
 
 | model | default device | why |
 |---|---|---|
-| 2B (3.5 GB bf16) | GPU | resident router; coexists with a Godot editor holding VRAM |
+| 2B (3.5 GB bf16) | GPU | resident router; coexists with another app holding VRAM |
 | 4B v2 (7.8 GB bf16) | CPU | GPU-only when the card is otherwise idle: weights + context ≈ 8.7 GB of 10 |
 
 The launcher checks **free** VRAM before every CUDA load and falls back to CPU
@@ -141,7 +141,6 @@ fetch_models.py            optional one-shot weight fetcher into models/
 audit_sandbox.py           verifies nothing leaks outside the app folder
 common.py                  drop-in model resolution + VRAM checks (no network)
 compat.py                  torch 2.5.1 <-> transformers 5.18 shims + cache pinning
-INTEGRATION.md             handoff: HTTP API + Godot client for consumers
 AGENTS.md                  runbook: fresh-machine install + verification
 SETUP.md                   the actual working recipe, deviations and all
 journal.jsonl              append-only decision log

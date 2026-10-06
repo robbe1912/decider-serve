@@ -1,7 +1,7 @@
 """End-to-end smoke test: CUDA availability, model loads, one decide() round-trip
 with the model card's known example, and latency measurements.
 
-  2B on GPU  (falls back to CPU with a warning when VRAM is short, e.g. Godot)
+  2B on GPU  (falls back to CPU with a warning when VRAM is short)
   4B v2 on CPU  (the batch-triage path)
   4B v2 on GPU, only when the 2B is unloaded AND enough VRAM is free
 

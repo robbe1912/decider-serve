@@ -10,7 +10,7 @@ Device policy for a 10 GB RTX 3080:
   * 2b defaults to cuda, 4b defaults to cpu -- the two are never loaded on the
     card together from this launcher.
   * Before any cuda load, free VRAM is checked against the safetensors size plus
-    a margin. If the model does not fit (e.g. a Godot editor is holding VRAM),
+    a margin. If the model does not fit (e.g. another app is holding VRAM),
     the launcher falls back to cpu with a warning, or exits if --force-gpu was
     given. This also stops a second instance from stacking on a resident one.
 
@@ -53,7 +53,7 @@ def main():
                    f"(weights {need / GiB:.1f} GiB + margin), only {free / GiB:.1f} GiB free")
             if args.force_gpu:
                 sys.exit(msg)
-            print(msg + " -- falling back to cpu (another VRAM consumer, e.g. Godot, is resident?)",
+            print(msg + " -- falling back to cpu (another VRAM consumer is resident?)",
                   file=sys.stderr)
             device = "cpu"
 
