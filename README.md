@@ -141,7 +141,8 @@ fetch_models.py            optional one-shot weight fetcher into models/
 audit_sandbox.py           verifies nothing leaks outside the app folder
 common.py                  drop-in model resolution + VRAM checks (no network)
 compat.py                  torch 2.5.1 <-> transformers 5.18 shims + cache pinning
-AGENTS.md                 runbook: fresh-machine install + verification
+INTEGRATION.md             handoff: HTTP API + Godot client for consumers
+AGENTS.md                  runbook: fresh-machine install + verification
 SETUP.md                   the actual working recipe, deviations and all
 journal.jsonl              append-only decision log
 models/                    weights (gitignored, drop-in plain folders)
