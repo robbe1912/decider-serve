@@ -1,0 +1,4 @@
+torch==2.5.1
+transformers==5.18.0
+flash-linear-attention==0.5.2
+decider-ai[serve]==1.8.1
