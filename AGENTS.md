@@ -109,7 +109,7 @@ Windows, `venv/bin/python` elsewhere).
 
 VRAM policy is enforced: `serve.py --model 4b` defaults to CPU; a 4b GPU
 load is refused unless ~9.1 GiB is free (override `--force-gpu`, idle card
-only). 2b needs ~4.5 GiB and coexists with a running game engine.
+only). 2b needs ~4.5 GiB and coexists with another GPU-hungry app on a 10 GB card.
 
 ## Rules for agents working in this repo
 
